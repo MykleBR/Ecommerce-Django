@@ -1,0 +1,16 @@
+    PerfilForm:
+        Este formulário é criado usando o ModelForm do Django.
+        O modelo associado a este formulário é models.Perfil.
+        O campo Meta especifica o modelo ao qual o formulário está associado e inclui todos os campos do modelo usando fields = '__all__'.
+        O campo exclude é usado para excluir o campo usuario do formulário, para que não seja exibido no formulário.
+
+    UserForm:
+        Este formulário também é criado usando o ModelForm do Django.
+        O modelo associado a este formulário é User do Django, que é o modelo padrão de usuário fornecido pelo Django.
+        Os campos incluídos no formulário são: first_name, last_name, username, password, password2 e email.
+        O campo password é definido como um campo de senha, onde os caracteres digitados são ocultados.
+        O campo password2 é uma confirmação da senha, onde os caracteres digitados também são ocultados.
+        O método __init__ é usado para inicializar o formulário e receber um parâmetro opcional usuario.
+        O método clean é usado para validar os dados do formulário. Ele verifica se o usuário já existe, se o e-mail já está sendo usado, se as senhas correspondem e se a senha tem pelo menos 6 caracteres. Se houver erros de validação, uma exceção forms.ValidationError é lançada com as mensagens de erro apropriadas.
+
+Esses formulários são usados no contexto de criação e atualização de perfis de usuário, juntamente com a autenticação e validação dos dados fornecidos pelos usuários.

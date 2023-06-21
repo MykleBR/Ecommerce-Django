@@ -1,0 +1,63 @@
+Views
+ListaProdutos
+
+Esta view é uma classe baseada em ListView que lista todos os produtos.
+
+Atributos:
+
+    model: O modelo usado pela view (models.Produto).
+    template_name: O nome do template usado para renderizar a página (produto/lista.html).
+    context_object_name: O nome da variável de contexto que contém a lista de produtos (produtos).
+    paginate_by: O número de produtos exibidos por página (3).
+    ordering: A ordem de classificação dos produtos (-id para ordem decrescente).
+
+Busca
+
+Esta view é uma subclasse de ListaProdutos que filtra os produtos de acordo com um termo de busca fornecido.
+
+Métodos:
+
+    get_queryset(*args, **kwargs): Retorna uma queryset filtrada de produtos com base no termo de busca fornecido. Os produtos são filtrados pelo nome, descrição curta e descrição longa.
+
+DetalheProduto
+
+Esta view é uma classe baseada em DetailView que exibe os detalhes de um produto específico.
+
+Atributos:
+
+    model: O modelo usado pela view (models.Produto).
+    template_name: O nome do template usado para renderizar a página (produto/detalhe.html).
+    context_object_name: O nome da variável de contexto que contém o produto (produto).
+    slug_url_kwarg: O nome do argumento na URL que contém o slug do produto.
+
+AdicionarAoCarrinho
+
+Esta view adiciona um produto com uma determinada variação ao carrinho.
+
+Métodos:
+
+    get(*args, **kwargs): Processa a requisição GET para adicionar o produto ao carrinho. Extrai informações do produto e da variação da URL e as adiciona ao carrinho armazenado na sessão. Redireciona o usuário de volta à página anterior com uma mensagem de sucesso ou erro.
+
+RemoverDoCarrinho
+
+Esta view remove um produto com uma determinada variação do carrinho.
+
+Métodos:
+
+    get(*args, **kwargs): Processa a requisição GET para remover o produto do carrinho. Verifica se o produto está presente no carrinho armazenado na sessão e, em caso afirmativo, o remove e redireciona o usuário de volta à página anterior com uma mensagem de sucesso.
+
+Carrinho
+
+Esta view exibe o conteúdo do carrinho.
+
+Métodos:
+
+    get(*args, **kwargs): Renderiza a página do carrinho, fornecendo o carrinho armazenado na sessão como contexto.
+
+ResumoDaCompra
+
+Esta view exibe o resumo da compra, incluindo o usuário logado e o conteúdo do carrinho.
+
+Métodos:
+
+    get(*args, **kwargs): Verifica se o usuário está autenticado e possui um perfil associado. Em seguida, verifica se o carrinho está vazio. Se todas as condições forem atendidas, renderiza a página de resumo da compra, fornecendo o usuário e o carrinho como contexto.

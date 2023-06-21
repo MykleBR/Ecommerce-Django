@@ -1,0 +1,9 @@
+O admin do aplicativo "pedido" possui duas seções principais: "Pedido" e "ItemPedido". Essas seções são registradas no painel de administração do Django para permitir a administração e visualização dos pedidos e seus itens relacionados.
+
+    PedidoAdmin: Esta é a classe de administração personalizada para o modelo "Pedido". Ela define a exibição e o comportamento personalizado do modelo no painel de administração. A classe ItemPedidoInline é usada como uma opção de linha inline para exibir os itens do pedido ao editar um pedido específico.
+
+    ItemPedidoInline: Essa classe define como os itens do pedido serão exibidos ao editar um pedido no painel de administração. Ela é registrada como uma inline na classe PedidoAdmin para permitir a visualização e edição dos itens associados a um pedido específico.
+
+    Registro no admin: Os modelos "Pedido" e "ItemPedido" são registrados no painel de administração usando a função admin.site.register. Isso permite que os modelos sejam acessados e gerenciados no painel de administração.
+
+Com essa configuração, é possível acessar e gerenciar os pedidos e seus itens relacionados no painel de administração. A seção "Pedido" exibirá uma lista de pedidos, onde cada pedido pode ser editado para visualizar e gerenciar seus itens associados na seção "Itens do pedido".

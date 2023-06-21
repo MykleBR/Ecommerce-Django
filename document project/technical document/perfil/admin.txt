@@ -1,0 +1,3 @@
+A linha admin.site.register(models.Perfil) registra o modelo Perfil no painel de administração do Django, permitindo que você gerencie os registros desse modelo por meio da interface de administração.
+
+Depois de registrar o modelo, você poderá acessar a seção correspondente no painel de administração do Django e realizar operações como visualização, criação, atualização e exclusão de instâncias do modelo "Perfil".

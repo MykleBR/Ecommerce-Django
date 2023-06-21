@@ -1,0 +1,12 @@
+O arquivo omfilters.py é um módulo localizado no diretório templatetags do seu aplicativo Django. Ele define filtros personalizados que podem ser usados nos seus templates para formatar preços e calcular totais do carrinho.
+Filtro formata_preco
+
+O filtro formata_preco usa a função formata_preco do módulo utils para formatar um valor de preço.
+Filtro cart_total_qtd
+
+O filtro cart_total_qtd usa a função cart_total_qtd do módulo utils para calcular o total de itens no carrinho.
+Filtro cart_totals
+
+O filtro cart_totals usa a função cart_totals do módulo utils para calcular o total geral do carrinho.
+
+Esses filtros podem ser usados nos seus templates Django para executar essas ações específicas. Certifique-se de registrar o módulo omfilters no arquivo __init__.py do diretório templatetags para que os filtros sejam reconhecidos pelo Django.

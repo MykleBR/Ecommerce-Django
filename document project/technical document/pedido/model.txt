@@ -1,0 +1,25 @@
+    Pedido:
+        O modelo Pedido representa um pedido feito por um usuário.
+        Os campos do modelo são:
+            usuario: Uma chave estrangeira para o modelo User fornecido pelo Django, relacionando o pedido ao usuário que o fez. Se um usuário for excluído, todos os pedidos associados a ele também serão excluídos (on_delete=models.CASCADE).
+            total: Um campo FloatField que armazena o valor total do pedido.
+            qtd_total: Um campo PositiveIntegerField que armazena a quantidade total de itens no pedido.
+            status: Um campo CharField que define o status do pedido. Ele tem um valor padrão de "C" (Criado) e usa a escolha de tupla para definir as opções de status disponíveis.
+        O método __str__() retorna uma representação em string do objeto Pedido, que neste caso é "Pedido N. {id}".
+
+    ItemPedido:
+        O modelo ItemPedido representa um item específico dentro de um pedido.
+        Os campos do modelo são:
+            pedido: Uma chave estrangeira para o modelo Pedido, relacionando o item ao pedido ao qual pertence (on_delete=models.CASCADE).
+            produto: Um campo CharField que armazena o nome do produto.
+            produto_id: Um campo PositiveIntegerField que armazena o ID do produto.
+            variacao: Um campo CharField que armazena a variação do produto.
+            variacao_id: Um campo PositiveIntegerField que armazena o ID da variação.
+            preco: Um campo FloatField que armazena o preço do item.
+            preco_promocional: Um campo FloatField opcional que armazena o preço promocional do item (com valor padrão de 0).
+            quantidade: Um campo PositiveIntegerField que armazena a quantidade do item.
+            imagem: Um campo CharField que armazena o URL da imagem do item.
+        O método __str__() retorna uma representação em string do objeto ItemPedido, que neste caso é "Item do Pedido N. {id}".
+        A classe Meta define opções adicionais para o modelo, como verbose_name (nome singular personalizado) e verbose_name_plural (nome plural personalizado).
+
+Esses modelos definem a estrutura de dados necessária para representar os pedidos e seus itens no aplicativo "pedido".

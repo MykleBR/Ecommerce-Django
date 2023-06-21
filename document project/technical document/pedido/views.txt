@@ -1,0 +1,37 @@
+    DispatchLoginRequiredMixin:
+        Esta é uma classe de visualização base que verifica se o usuário está autenticado antes de executar qualquer ação.
+        Ela herda da classe View do Django e substitui o método dispatch() para redirecionar o usuário para a página de criação de perfil (perfil:criar) se ele não estiver autenticado.
+        Além disso, o método get_queryset() é substituído para filtrar o conjunto de consulta apenas para os pedidos associados ao usuário autenticado.
+
+    Pagar (DetailView):
+        Esta classe de visualização herda da classe DispatchLoginRequiredMixin e da classe DetailView do Django.
+        Ela renderiza a página de pagamento para um pedido específico.
+        O modelo utilizado é Pedido, e o identificador do objeto é passado como um parâmetro de URL com o nome de pk.
+        O template usado é 'pedido/pagar.html', e o objeto do pedido é disponibilizado no contexto com o nome de pedido.
+
+    SalvarPedido (View):
+        Esta classe de visualização herda apenas da classe View do Django.
+        Ela é responsável por salvar um novo pedido com base no carrinho de compras.
+        No método get(), verifica se o usuário está autenticado e se o carrinho não está vazio. Em caso de falha, exibe mensagens de erro apropriadas e redireciona o usuário para a criação de perfil (perfil:criar) ou para a lista de produtos (produto:lista).
+        Em seguida, recupera os itens do carrinho do banco de dados com base nas variações presentes no carrinho.
+        Se a quantidade no carrinho for maior que o estoque disponível, a quantidade é ajustada para corresponder ao estoque e uma mensagem de erro é exibida.
+        Em seguida, calcula a quantidade total de itens no carrinho e o valor total do carrinho.
+        Cria um novo objeto Pedido com base nas informações do usuário, total, quantidade total e status.
+        Salva o objeto Pedido no banco de dados.
+        Usa bulk_create() para criar os objetos ItemPedido associados ao pedido, com base nos itens do carrinho.
+        Por fim, remove o carrinho da sessão e redireciona o usuário para a página de pagamento do pedido recém-criado.
+
+    Detalhe (DetailView):
+        Esta classe de visualização herda da classe DispatchLoginRequiredMixin e da classe DetailView do Django.
+        Ela renderiza a página de detalhes de um pedido específico.
+        O modelo utilizado é Pedido, e o identificador do objeto é passado como um parâmetro de URL com o nome de pk.
+        O template usado é 'pedido/detalhe.html', e o objeto do pedido é disponibilizado no contexto com o nome de pedido.
+
+    Lista (ListView):
+        Esta classe de visualização herda da classe DispatchLoginRequiredMixin e da classe ListView do Django.
+        Ela renderiza a página que lista todos os pedidos de um usuário específico.
+        O modelo utilizado é Pedido.
+        O template usado é 'pedido/lista.html', e uma lista de objetos de pedido é disponibilizada no contexto com o nome de pedidos.
+        A paginação é configurada para exibir 10 pedidos por página, e a ordem de exibição é baseada no ID do pedido, do mais recente ao mais antigo.
+
+Essas views fornecem as funcionalidades necessárias para exibir, criar e manipular pedidos no aplicativo "pedido".

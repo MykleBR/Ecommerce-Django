@@ -1,0 +1,31 @@
+O arquivo "settings.py" contém as configurações do projeto Django. Aqui está uma explicação das principais configurações presentes no arquivo:
+
+    SECRET_KEY: É uma chave secreta que é usada para fins de segurança, como proteção contra ataques CSRF e criptografia de cookies. É importante manter essa chave em segredo.
+
+    DEBUG: Define se o modo de depuração está ativado ou desativado. No modo de depuração, erros detalhados são exibidos na página, o que é útil durante o desenvolvimento. No entanto, em um ambiente de produção, o modo de depuração deve ser desativado por motivos de segurança.
+
+    ALLOWED_HOSTS: Uma lista de hosts ou domínios que são permitidos para o projeto Django. Quando o projeto é implantado em um ambiente de produção, é importante especificar os hosts válidos para evitar solicitações não autorizadas.
+
+    INSTALLED_APPS: Uma lista de aplicativos instalados no projeto. Cada aplicativo é responsável por fornecer funcionalidades específicas ao projeto. Neste caso, os aplicativos "produto", "perfil" e "pedido" são incluídos.
+
+    DATABASES: As configurações do banco de dados. Neste caso, é usado o banco de dados MySQL com as configurações fornecidas, como nome do banco de dados, usuário, senha, host e porta.
+
+    LANGUAGE_CODE: Define o código do idioma padrão para o projeto. Neste caso, o idioma padrão é "pt-BR" para português do Brasil.
+
+    TIME_ZONE: Define a zona de horário padrão para o projeto. Neste caso, é definido como "America/Sao_Paulo" para o horário de Brasília.
+
+    STATIC_URL: Define a URL base para os arquivos estáticos do projeto, como arquivos CSS, JavaScript e imagens.
+
+    STATIC_ROOT: O caminho absoluto para a pasta onde os arquivos estáticos serão coletados durante o processo de implantação.
+
+    STATICFILES_DIRS: Uma lista de caminhos adicionais onde os arquivos estáticos podem ser encontrados.
+
+    MEDIA_URL: Define a URL base para os arquivos de mídia do projeto, como imagens enviadas pelos usuários.
+
+    MEDIA_ROOT: O caminho absoluto para a pasta onde os arquivos de mídia serão salvos.
+
+    SESSION_COOKIE_AGE: Define a duração das sessões do usuário em segundos. Neste caso, a sessão é definida para durar 7 dias.
+
+    MESSAGE_TAGS: Mapeia as tags de mensagens do Django para classes CSS correspondentes, permitindo a estilização das mensagens de acordo com o tipo (debug, erro, informação, sucesso, aviso).
+
+Essas são apenas algumas das configurações presentes no arquivo "settings.py". O arquivo contém várias outras opções e configurações que podem ser ajustadas de acordo com as necessidades do projeto.

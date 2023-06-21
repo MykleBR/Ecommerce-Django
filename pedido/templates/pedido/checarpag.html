@@ -1,0 +1,114 @@
+{% extends 'base.html' %}
+{% block titulo %}Verificação de Pagamento | {% endblock %}
+{% load omfilters %}
+{% load static %}
+{% block conteudo %}
+<div class="row justify-content-center">
+    <div class="col">
+        <h3 class="text-center mb-4">OBRIGADO POR COMPRAR NA GOBUDS!</h3>
+    </div>
+</div>
+<div id="step1" class="row justify-content-center mt-4 fade-in-out" style="display: none;">
+    <div class="payment-verification text-center">
+        <h4>Finalizando dados da compra...</h4>
+        <p>Coletando informações de produtos...</p>
+    </div>
+</div>
+<div id="step2" class="row justify-content-center mt-4 fade-in-out" style="display: none;">
+    <div class="payment-verification text-center">
+        <h4>Verificando pagamento...</h4>
+        <p>Analisando os orgãos de pagamento...</p>
+    </div>
+</div>
+<div id="step3" class="row justify-content-center mt-4 fade-in-out" style="display: none;">
+    <div class="payment-verification text-center">
+        <h4>Gerando seu comprovante da compra...</h4>
+        <p>Detalhes e valores dos produtos adquiridos...</p>
+    </div>
+</div>
+<div id="step4" class="row justify-content-center mt-4 fade-in-out" style="display: none;">
+    <div class="payment-verification text-center">
+        <h4>Solicitando seu uber...</h4>
+        <p>Entrega rapida e segura...</p>
+    </div>
+</div>
+<div id="step5" class="row justify-content-center mt-4 fade-in-out" style="display: none;">
+    <div class="payment-result text-center">
+        <h4>Tudo certo! Mais uma vez, muito obrigado!</h4>
+        <p>Deixe-nos seu feedback e volte sempre!</p>
+        <div class="comprovante-download">
+            <a href="#" class="btn btn-primary">BAIXAR COMPROVANTE</a>
+            <a href="#" class="btn btn-secondary">VISUALIZAR COMPROVANTE</a>
+        </div>
+    </div>
+</div>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const steps = document.querySelectorAll('.fade-in-out');
+      let currentStep = 1;
+      let delay = 3000; // Tempo de espera em milissegundos antes de avançar para a próxima etapa
+  
+      function showStep(stepNumber) {
+        document.getElementById('step' + stepNumber).style.display = 'block';
+      }
+  
+      function hideStep(stepNumber) {
+        document.getElementById('step' + stepNumber).style.display = 'none';
+      }
+  
+      function simulateNextStep() {
+        currentStep++;
+        if (currentStep <= steps.length) {
+          setTimeout(function() {
+            hideStep(currentStep - 1);
+            showStep(currentStep);
+            simulateNextStep();
+          }, delay); // Tempo de espera entre as etapas
+        }
+      }
+  
+      // Simulação de verificação de pagamento
+      function simulatePaymentVerification() {
+        setTimeout(function() {
+          // Verificação bem-sucedida, avance para a próxima etapa
+          simulateComprovanteGeneration();
+        }, delay); // Tempo de espera
+      }
+  
+      // Simulação de geração do comprovante
+      function simulateComprovanteGeneration() {
+        setTimeout(function() {
+          // Geração do comprovante concluída, avance para a próxima etapa
+          simulateOrderFinalization();
+        }, delay); // Tempo de espera
+      }
+  
+      // Simulação de finalização do pedido
+      function simulateOrderFinalization() {
+        setTimeout(function() {
+          // Finalização do pedido concluída, avance para a próxima etapa
+          simulatePrintComprovante();
+        }, delay); // Tempo de espera
+      }
+  
+      // Simulação de impressão do comprovante
+      function simulatePrintComprovante() {
+        setTimeout(function() {
+          // Etapa 5: Tudo certo! Mais uma vez, muito obrigado!
+          showStep(currentStep);
+        }, delay); // Tempo de espera
+      }
+  
+      // Simulação do processo de compra
+      function simulateCompraProcess() {
+        setTimeout(function() {
+          // Etapa 1: Finalizando dados da compra...
+          showStep(currentStep);
+          simulateNextStep();
+        }, delay); // Tempo de espera
+      }
+  
+      simulateCompraProcess();
+    });
+</script>  
+{% endblock %}

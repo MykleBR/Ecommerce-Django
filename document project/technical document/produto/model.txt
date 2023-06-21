@@ -1,0 +1,48 @@
+App "produto"
+
+O aplicativo "produto" é responsável pela gestão dos produtos no seu site. Ele inclui models para representar os produtos e suas variações, além de métodos para manipular as imagens dos produtos.
+Models
+Produto
+
+Este model representa um produto no site.
+
+Atributos:
+
+    nome (CharField): O nome do produto.
+    descricao_curta (TextField): A descrição curta do produto.
+    descricao_longa (TextField): A descrição longa do produto.
+    imagem (ImageField): A imagem ilustrativa do produto.
+    slug (SlugField): O slug do produto para URLs amigáveis.
+    preco_marketing (FloatField): O preço de marketing do produto.
+    preco_marketing_promocional (FloatField): O preço de marketing promocional do produto.
+    tipo (CharField): O tipo de produto (variável ou simples).
+
+Métodos:
+
+    get_preco_formatado(): Retorna o preço de marketing do produto formatado.
+    get_preco_promocional_formatado(): Retorna o preço de marketing promocional do produto formatado.
+    resize_image(img, new_width=800): Redimensiona a imagem do produto para um novo tamanho específico.
+    save(*args, **kwargs): Sobrescreve o método de salvamento para definir o slug do produto e redimensionar a imagem antes de salvar.
+
+Variacao
+
+Este model representa as variações de um produto.
+
+Atributos:
+
+    produto (ForeignKey): A referência ao produto relacionado.
+    nome (CharField): O nome da variação (opcional).
+    preco (FloatField): O preço da variação.
+    preco_promocional (FloatField): O preço promocional da variação.
+    estoque (PositiveIntegerField): O estoque disponível para a variação.
+
+Métodos especiais
+
+    __str__: Retorna uma representação em string do objeto Produto ou Variacao.
+
+Utilidades
+
+O app "produto" também inclui um módulo chamado "utils" com o seguinte conteúdo:
+
+    O arquivo utils.py contém o seguinte método:
+        formata_preco(preco): Retorna uma string formatada para exibição de preços.

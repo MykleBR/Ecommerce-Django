@@ -1,0 +1,87 @@
+projeto
+├── gobuds
+│   ├── asgi.py
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
+├── media
+│   └── produto_imagens
+│       └── <ano>
+│           └── <mês>
+│               └── foto.png
+├── produto
+│   ├── templatetags
+│   │   └── omfilters.py
+│   ├── templates
+│   │   └── produto
+│   │       ├── carrinho.html
+│   │       ├── detalhe.html
+│   │       ├── lista.html
+│   │       └── resumodacompra.html
+│   ├── models.py
+│   ├── views.py
+│   ├── urls.py
+│   ├── admin.py
+│   ├── forms.py
+│   ├── apps.py
+│   └── tests
+├── perfil
+│   ├── templates
+│   │   └── perfil
+│   │       ├── criar.html
+│   │       └── atualizar.html
+│   ├── models.py
+│   ├── views.py
+│   ├── urls.py
+│   ├── admin.py
+│   ├── forms.py
+│   ├── apps.py
+│   └── tests
+├── pedido
+│   ├── templatetags
+│   │   └── omfilters.py
+│   ├── templates
+│   │   └── pedido
+│   │       ├── detalhe.html
+│   │       ├── lista.html
+│   │       └── pagar.html
+│   ├── models.py
+│   ├── views.py
+│   ├── urls.py
+│   ├── admin.py
+│   ├── apps.py
+│   └── tests
+├── template
+│   ├── parciais
+│   │   ├── _carrinho.html
+│   │   ├── _footer.html
+│   │   ├── _head.html
+│   │   ├── _messages.html
+│   │   ├── _nav.html
+│   │   ├── _pagination.html
+│   │   └── _pedido.html
+│   └── static
+│       ├── assets
+│       │   ├── bootstrap
+│       │   │   ├── css
+│       │   │   └── js
+│       │   ├── custom
+│       │   │   ├── css
+│       │   │   └── js
+│       │   └── font-awesome
+│       │       ├── css
+│       │       ├── js
+│       │       ├── less
+│       │       ├── metadata
+│       │       ├── scss
+│       │       ├── sprites
+│       │       ├── svgs
+│       │       └── webfonts
+│       └── logo
+│           └── logo.png
+├── base.html
+├── 404.html
+├── utils
+│   ├── utils.py
+│   └── validacpf.py
+└── manage.py

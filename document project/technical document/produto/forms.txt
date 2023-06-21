@@ -1,0 +1,8 @@
+O formulário VariacaoObrigatoria define um formulário personalizado para o modelo Variacao quando exibido como parte do admin do produto. Ele é baseado na classe BaseInlineFormSet do Django e possui uma modificação para tornar a variação obrigatória.
+Classe VariacaoObrigatoria
+
+    A classe VariacaoObrigatoria é uma subclasse de BaseInlineFormSet.
+    O método _construct_form é substituído para adicionar a funcionalidade de tornar a variação obrigatória.
+    form.empty_permitted = False define que o formulário não permite campos vazios.
+
+Certifique-se de importar corretamente o BaseInlineFormSet no arquivo de formulários do produto. Isso garantirá que o formulário personalizado VariacaoObrigatoria seja usado corretamente no admin para as variações do produto.

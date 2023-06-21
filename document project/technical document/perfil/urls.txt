@@ -1,0 +1,8 @@
+Essas URLs estão mapeadas para diferentes classes de visualização no arquivo views.py do aplicativo "perfil". As URLs definidas são:
+
+    '' (raiz vazia): Mapeada para a classe Criar com o nome de URL 'criar'. Essa rota lida com a criação de um novo perfil de usuário.
+    'atualizar/': Mapeada para a classe Atualizar com o nome de URL 'atualizar'. Essa rota lida com a atualização do perfil do usuário.
+    'login/': Mapeada para a classe Login com o nome de URL 'login'. Essa rota lida com o processo de login do usuário.
+    'logout/': Mapeada para a classe Logout com o nome de URL 'logout'. Essa rota lida com o processo de logout do usuário.
+
+Portanto, ao acessar as respectivas URLs, o Django irá chamar as classes de visualização correspondentes para lidar com as requisições.

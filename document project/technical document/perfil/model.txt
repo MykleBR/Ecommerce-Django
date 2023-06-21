@@ -1,0 +1,20 @@
+O modelo Perfil do aplicativo "perfil" define um perfil de usuário associado a um modelo de usuário (User) do Django.
+
+Os campos do modelo Perfil incluem:
+
+    usuario: Um relacionamento um-para-um com o modelo User do Django, usando OneToOneField.
+    data_nascimento: Um campo de data para armazenar a data de nascimento do perfil.
+    cpf: Um campo de caractere para armazenar o número do CPF.
+    endereco: Um campo de caractere para armazenar o endereço.
+    numero: Um campo de caractere para armazenar o número do endereço.
+    complemento: Um campo de caractere para armazenar informações adicionais do endereço.
+    bairro: Um campo de caractere para armazenar o bairro do endereço.
+    cep: Um campo de caractere para armazenar o CEP do endereço.
+    cidade: Um campo de caractere para armazenar a cidade do endereço.
+    estado: Um campo de caractere para armazenar o estado do endereço, com opções pré-definidas usando o campo choices.
+
+O método clean() é definido para realizar validações adicionais no modelo. Ele verifica se o CPF já existe em outro perfil e valida o formato do CPF e do CEP. Se alguma validação falhar, ele lançará uma exceção de ValidationError.
+
+A classe Meta é usada para fornecer metadados do modelo, como os nomes de exibição (verbose_name e verbose_name_plural).
+
+No geral, o modelo Perfil é usado para armazenar informações adicionais sobre os usuários do sistema, como data de nascimento, CPF e endereço.

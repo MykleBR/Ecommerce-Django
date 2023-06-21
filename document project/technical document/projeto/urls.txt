@@ -1,0 +1,15 @@
+O arquivo "urls.py" do projeto é responsável por configurar as URLs do aplicativo dentro do projeto. Aqui está uma explicação do arquivo:
+
+    urlpatterns: É uma lista que contém as configurações das URLs do projeto. Cada elemento dessa lista define uma rota de URL para uma view específica.
+
+    path('', include('produto.urls')): Define a rota raiz do projeto, representada por '', que será redirecionada para as URLs definidas no aplicativo "produto". O include('produto.urls') indica que as URLs do aplicativo "produto" serão incluídas nessa rota.
+
+    path('perfil/', include('perfil.urls')): Define a rota "perfil/" que será redirecionada para as URLs definidas no aplicativo "perfil". O include('perfil.urls') indica que as URLs do aplicativo "perfil" serão incluídas nessa rota.
+
+    path('pedido/', include('pedido.urls')): Define a rota "pedido/" que será redirecionada para as URLs definidas no aplicativo "pedido". O include('pedido.urls') indica que as URLs do aplicativo "pedido" serão incluídas nessa rota.
+
+    path('admin/', admin.site.urls): Define a rota "admin/" que será redirecionada para o painel de administração do Django. Essa rota é usada para acessar e gerenciar os modelos registrados no admin.
+
+    static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT): Adiciona as configurações para servir arquivos de mídia estáticos durante o desenvolvimento. Isso permite que as imagens e outros arquivos de mídia sejam acessados por meio de URLs definidas em settings.MEDIA_URL, com a localização dos arquivos especificada em settings.MEDIA_ROOT.
+
+Essas configurações de URL direcionam as solicitações para as views apropriadas nos aplicativos correspondentes, permitindo a navegação e o acesso correto às diferentes partes do projeto.

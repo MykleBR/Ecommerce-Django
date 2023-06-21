@@ -1,0 +1,18 @@
+URLs
+Lista de URLs
+
+    '': URL raiz que corresponde à view ListaProdutos.as_view() e possui o nome lista. Essa URL lista todos os produtos.
+
+    '<slug>': URL que corresponde à view DetalheProduto.as_view() e possui o nome detalhe. Essa URL exibe os detalhes de um produto específico com base em seu slug.
+
+    'adicionaraocarrinho/': URL que corresponde à view AdicionarAoCarrinho.as_view() e possui o nome adicionaraocarrinho. Essa URL adiciona um produto com uma determinada variação ao carrinho.
+
+    'removerdocarrinho/': URL que corresponde à view RemoverDoCarrinho.as_view() e possui o nome removerdocarrinho. Essa URL remove um produto com uma determinada variação do carrinho.
+
+    'carrinho/': URL que corresponde à view Carrinho.as_view() e possui o nome carrinho. Essa URL exibe o conteúdo do carrinho.
+
+    'resumodacompra/': URL que corresponde à view ResumoDaCompra.as_view() e possui o nome resumodacompra. Essa URL exibe o resumo da compra.
+
+    'busca/': URL que corresponde à view Busca.as_view() e possui o nome busca. Essa URL realiza uma busca por produtos com base em um termo fornecido.
+
+O app_name é definido como 'produto', o que significa que você pode usar o namespace 'produto' ao criar links reversos nas templates.

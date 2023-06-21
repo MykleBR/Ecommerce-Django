@@ -1,0 +1,11 @@
+Essas URLs mapeiam as views correspondentes para diferentes rotas no aplicativo "pedido". Aqui está uma breve descrição de cada URL:
+
+    pagar/<int:pk>: A URL recebe um parâmetro <int:pk> que representa o ID do pedido. Ela é associada à view Pagar e tem o nome de URL 'pagar'. Essa URL é usada para exibir a página de pagamento para um pedido específico.
+
+    salvarpedido/: Essa URL está associada à view SalvarPedido e tem o nome de URL 'salvarpedido'. Ela é usada para salvar um novo pedido com base no carrinho de compras.
+
+    lista/: Essa URL está associada à view Lista e tem o nome de URL 'lista'. Ela é usada para exibir a lista de pedidos de um usuário específico.
+
+    detalhe/<int:pk>: A URL recebe um parâmetro <int:pk> que representa o ID do pedido. Ela é associada à view Detalhe e tem o nome de URL 'detalhe'. Essa URL é usada para exibir a página de detalhes para um pedido específico.
+
+As URLs definidas no arquivo devem ser incluídas no arquivo de URLs principal do projeto para que o Django possa rotear as solicitações corretamente para as views correspondentes do aplicativo "pedido".

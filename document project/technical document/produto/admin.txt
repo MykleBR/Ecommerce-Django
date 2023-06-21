@@ -1,0 +1,22 @@
+Admin do Produto
+Classe VariacaoInline
+
+    A classe VariacaoInline é uma subclasse de admin.TabularInline e define a exibição das variações do produto no admin.
+    model = models.Variacao: Define o modelo a ser usado para as variações.
+    formset = VariacaoObrigatoria: Define o formulário a ser usado para as variações. A classe VariacaoObrigatoria deve ser definida em um arquivo de formulários separado.
+    min_num = 1: Define o número mínimo de variações que devem ser exibidas.
+    extra = 0: Define o número extra de campos vazios para variações.
+    can_delete = True: Permite a exclusão das variações.
+
+Classe ProdutoAdmin
+
+    A classe ProdutoAdmin é uma subclasse de admin.ModelAdmin e define a exibição e o comportamento do admin para o modelo Produto.
+    list_display: Define os campos a serem exibidos na lista de produtos no admin.
+    inlines: Define as seções de variações do produto a serem exibidas no admin. Neste caso, é exibida a classe VariacaoInline.
+
+Registro dos modelos
+
+    admin.site.register(models.Produto, ProdutoAdmin): Registra o modelo Produto no admin e associa a classe ProdutoAdmin para personalizar sua exibição e comportamento.
+    admin.site.register(models.Variacao): Registra o modelo Variacao no admin sem personalização adicional.
+
+Certifique-se de importar corretamente os modelos e formulários necessários no arquivo do admin do produto. Essas configurações permitirão que você gerencie e visualize os produtos e suas variações por meio do painel de administração do Django.
